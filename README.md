@@ -7,23 +7,28 @@ Helm chart repository
 Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
-
-  helm repo add <alias> https://helm.cloudclinic.ng/helm-charts
+```bash
+  helm repo add cloudclinic https://helm.cloudclinic.ng/helm-charts
+```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
 the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+cloudclinic` to see the charts.
 
-To install the <chart-name> chart:
+### To install the cloudclinic chart:
+```bash
+  helm install cloudclinic cloudclinic/cloudclinic
+```
+### To uninstall the chart:
+```bash
+  helm uninstall cloudclinic
+```
 
-    helm install <chart-name> <alias>/<chart-name>
+### Local development
 
-To uninstall the chart:
-
-    helm uninstall <chart-name>
-
-
-
-helm install cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
-
+```bash
 helm template cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
+```
+```bash
+helm install cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
+```
