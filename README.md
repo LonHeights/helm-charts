@@ -16,8 +16,14 @@ the latest versions of the packages.  You can then run `helm search repo
 
 To install the <chart-name> chart:
 
-    helm install my-<chart-name> <alias>/<chart-name>
+    helm install <chart-name> <alias>/<chart-name>
 
 To uninstall the chart:
 
-    helm delete my-<chart-name>
+    helm uninstall <chart-name>
+
+
+
+helm install cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
+
+helm template cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
