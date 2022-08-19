@@ -1,6 +1,16 @@
 apiVersion: v1
 entries:
   cloudclinic:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-08-19T17:17:22.180084296Z"
+    description: A Helm chart for Kubernetes
+    digest: 6e6cba8d78cb0e1f5c87ff864580aa28489311bb05bde4ff9f21a9ce84ffdd3d
+    name: cloudclinic
+    type: application
+    urls:
+    - https://github.com/CloudClinic-ng/helm-charts/releases/download/cloudclinic-1.0.0/cloudclinic-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2022-08-19T15:40:28.191826986Z"
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/CloudClinic-ng/helm-charts/releases/download/cloudclinic-0.1.1/cloudclinic-0.1.1.tgz
     version: 0.1.1
-generated: "2022-08-19T15:40:28.191831186Z"
+generated: "2022-08-19T17:17:22.180092897Z"
