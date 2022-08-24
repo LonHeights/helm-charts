@@ -1,5 +1,6 @@
 # helm-charts
 Helm chart repository
+[![Release Charts](https://github.com/CloudClinic-ng/helm-charts/actions/workflows/release.yaml/badge.svg)](https://github.com/CloudClinic-ng/helm-charts/actions/workflows/release.yaml)
 
 ## Usage
 
