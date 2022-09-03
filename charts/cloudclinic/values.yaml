@@ -16,18 +16,18 @@ namespace: "default"
 
 # Resources
 resources:
-  limits:
-    cpu: "100m"
-    memory: "100Mi"
   requests:
+    cpu: "50m"
+    memory: "50Mi"
+  limits:
     cpu: "100m"
     memory: "100Mi"
 
 # Environment
 environment: {}
-# uncomment name below to set environment variables to `Staging` or `Production`. Development does not have a label
-# Must be set to `Production` for production deployments and `Staging` for staging deployments.
-#   name: "Staging | Production"
+  # uncomment name below to set environment variables to `Staging` or `Production`. Development does not have a label
+  # Must be set to `Production` for production deployments and `Staging` for staging deployments.
+  # name: "Staging | Production"
 
 # Tolerations
 tolerations:
@@ -71,13 +71,18 @@ pv:
   # uncomment below to set persistent volume
   create: false # true: create pv | false: do not create pvc
   name: "cloudclinic-pv"
-  size: 128Gi
+  size: 8Gi
   path: "/var/lib/cloudclinic"
-  storageClass: "azureFile"
+  storageClass: "azurefile-csi"
+
+# volume
+volume:
+  bind: false # set to `true` to bind a volume. Note that `pvc.create` must be set to true for the data to be persistent.
+  path: "/mnt/data" # Set to the correct path your application needs.
 
 # persistent volume claim
 pvc:
-  create: false # true: create pvc | false: do not create pvc
+  create: false # true: create pvc | false: do not create pvc. Note that `volume.bind` must be true for this to be bond to a pod.
   name: "cloudclinic-pvc"
-  size: 128Gi
-  storageClass: "azureFile"
+  size: 8Gi
+  storageClass: "azurefile-csi"
