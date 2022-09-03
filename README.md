@@ -30,5 +30,5 @@ cloudclinic` to see the charts.
 helm template cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
 ```
 ```bash
-helm install cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
+helm install nginx charts/cloudclinic/ --values charts/cloudclinic/values.yaml
 ```
