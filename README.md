@@ -8,7 +8,7 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 ```bash
-  helm repo add cloudclinic https://helm.cloudclinic.ng/helm-charts
+  helm repo add cloudclinic https://helm.cloudclinic.ng
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
@@ -30,5 +30,5 @@ cloudclinic` to see the charts.
 helm template cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
 ```
 ```bash
-helm install cloudclinic charts/cloudclinic/ --values charts/cloudclinic/values.yaml
+helm install nginx charts/cloudclinic/ --values charts/cloudclinic/values.yaml
 ```
