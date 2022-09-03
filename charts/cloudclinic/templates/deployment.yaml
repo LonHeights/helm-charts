@@ -21,6 +21,11 @@ spec:
           imagePullPolicy: {{ .Values.deployment.pullPolicy }}
           ports:
           - containerPort: {{ .Values.deployment.port }}
+          {{- if .Values.volume.bind }}
+          volumeMounts:
+          - name: {{ .Values.deployment.name | quote }}
+            mountPath: {{ .Values.volume.path }}
+          {{- end }}
           {{- if .Values.env }}
           envFrom:
             {{- if .Values.env.secret.create }}
@@ -44,6 +49,12 @@ spec:
               cpu: "50m"
               memory: "100Mi"
           {{- end }}
+      {{- if .Values.pvc.create }}
+      volumes:
+      - name: {{ .Values.deployment.name | quote }}
+        persistentVolumeClaim:
+          claimName: {{ .Values.pvc.name }}
+      {{- end}}
       {{- if .Values.environment }}
       nodeSelector:
         environment: {{ .Values.environment.name | quote }}

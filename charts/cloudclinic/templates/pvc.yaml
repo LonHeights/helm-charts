@@ -10,8 +10,5 @@ spec:
     requests:
       storage: {{ .Values.pvc.size }}
   storageClassName: {{ .Values.pvc.storageClass }}
-  selector:
-    matchLabels:
-      type: {{ .Values.pvc.name }}
 
 {{- end -}}
