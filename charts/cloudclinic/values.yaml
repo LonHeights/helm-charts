@@ -40,6 +40,9 @@ service:
     name: TCP
     http: 80
     https: 443
+  annotations:
+    enabled: false # Set as `true` for apis that uses internal loadbalancer with apim
+    annotations: 'service.beta.kubernetes.io/azure-load-balancer-internal: "true"'
 
 # Environment Variables sources
 env:

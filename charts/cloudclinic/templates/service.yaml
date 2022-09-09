@@ -3,6 +3,10 @@ kind: Service
 metadata:
   name: {{ .Values.deployment.name | quote }}
   namespace: {{ .Values.namespace | quote }}
+  {{- if .Values.service.annotations.enabled}}
+  annotations:
+    {{ .Values.service.annotations.annotations}}
+  {{- end }}
 spec:
   selector:
     app: {{ .Values.deployment.name | quote}}
