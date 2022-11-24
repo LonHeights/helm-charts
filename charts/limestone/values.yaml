@@ -1,4 +1,4 @@
-# Default values for cloudclinic-chart.
+# Default values for limestone-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -25,13 +25,13 @@ resources:
 
 # Environment
 environment: {}
-  # uncomment name below to set environment variables to `Staging` or `Production`. Development does not have a label
-  # Must be set to `Production` for production deployments and `Staging` for staging deployments.
-  # name: "Staging | Production"
+  # uncomment name below to set environment variables to `Staging` or `Development`. Production does not have a label
+  # Must be set to `Development` for development deployments and `Staging` for staging deployments.
+  # name: "Staging | Development"
 
 # Tolerations
 tolerations:
-  enabled: false # set to `false` for development alone. Must be `true` for Staging and Production
+  enabled: false # set to `false` for production alone. Must be `true` for Staging and Development
 
 # Service
 service:
@@ -73,9 +73,9 @@ autoscaling:
 pv:
   # uncomment below to set persistent volume
   create: false # true: create pv | false: do not create pvc
-  name: "cloudclinic-pv"
+  name: "limestone-pv"
   size: 8Gi
-  path: "/var/lib/cloudclinic"
+  path: "/var/lib/limestone"
   storageClass: "azurefile-csi"
 
 # volume
@@ -86,6 +86,6 @@ volume:
 # persistent volume claim
 pvc:
   create: false # true: create pvc | false: do not create pvc. Note that `volume.bind` must be true for this to be bond to a pod.
-  name: "cloudclinic-pvc"
+  name: "limestone-pvc"
   size: 8Gi
   storageClass: "azurefile-csi"
