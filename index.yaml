@@ -3,6 +3,16 @@ entries:
   cloudclinic:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-02-09T15:38:52.142492312Z"
+    description: A Helm chart for Kubernetes
+    digest: 735ba278a569f0cc5b06b06bb132697d061bcd95de3d5528ae7d0a1b0214a67d
+    name: cloudclinic
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/cloudclinic-1.0.4/cloudclinic-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-11-24T07:51:14.400894178Z"
     description: A Helm chart for Kubernetes
     digest: 0b205209e558488c5196bf6b8b02e3f4f98d76c2f8cf89cab5636532ffd69b57
@@ -62,4 +72,4 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-24T07:51:14.551384045Z"
+generated: "2023-02-09T15:38:52.142514513Z"
