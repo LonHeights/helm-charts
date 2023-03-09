@@ -61,6 +61,17 @@ entries:
     urls:
     - https://github.com/CloudClinic-ng/helm-charts/releases/download/cloudclinic-0.1.1/cloudclinic-0.1.1.tgz
     version: 0.1.1
+  ingress:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-09T09:14:42.384223576Z"
+    description: A Helm chart for Kubernetes
+    digest: 3301c680c7b3db05a033501d7aef9746ba256a5744e39df16cbf9ffbfde93d8c
+    name: ingress
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/ingress-0.1.0/ingress-0.1.0.tgz
+    version: 0.1.0
   limestone:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -72,4 +83,4 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-09T15:38:52.142514513Z"
+generated: "2023-03-09T09:14:42.384239076Z"
