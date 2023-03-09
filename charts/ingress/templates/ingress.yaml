@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "ingress.fullname" . -}}
+{{- $name := .Values.name . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- $namespace := .Values.namespace -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
@@ -16,7 +16,7 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ $name }}
   namespace: {{ $namespace }}
   labels:
     {{- include "ingress.labels" . | nindent 4 }}
@@ -51,11 +51,11 @@ spec:
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ $fullName }}
+                name: {{ $name }}
                 port:
                   number: {{ $svcPort }}
               {{- else }}
-              serviceName: {{ $fullName }}
+              serviceName: {{ $name }}
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}

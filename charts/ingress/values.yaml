@@ -2,8 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-nameOverride: "cloudclinic-dev"
-fullnameOverride: "cloudclinic-dev"
+name: "cloudclinic-dev"
 
 namespace: default
 
