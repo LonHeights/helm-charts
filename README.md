@@ -8,7 +8,7 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 ```bash
-  helm repo add cloudclinic https://helm.cloudclinic.ng
+  helm repo add loh https://helm.cloudclinic.ng
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
@@ -17,11 +17,19 @@ cloudclinic` to see the charts.
 
 ### To install the cloudclinic chart:
 ```bash
-  helm install cloudclinic cloudclinic/cloudclinic
+  helm install cloudclinic loh/cloudclinic
+```
+
+### To install the limestone chart:
+```bash
+  helm install limestone loh/limestone
 ```
 ### To uninstall the chart:
 ```bash
   helm uninstall cloudclinic
+```
+```bash
+  helm uninstall limestone
 ```
 
 ### Local development
