@@ -1,6 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $name := .Values.name . -}}
-{{- $svcPort := .Values.service.port -}}
+{{- $name := .Values.name -}}
 {{- $namespace := .Values.namespace -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
@@ -48,16 +47,16 @@ spec:
             {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
             pathType: {{ .pathType }}
             {{- end }}
+          {{- end }}
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ $name }}
+                name: {{ .svcName }}
                 port:
-                  number: {{ $svcPort }}
+                  number: {{ .svcPort }}
               {{- else }}
-              serviceName: {{ $name }}
-              servicePort: {{ $svcPort }}
+              serviceName: {{ .svcName }}
+              servicePort: {{ .svcPort }}
               {{- end }}
-          {{- end }}
     {{- end }}
 {{- end }}

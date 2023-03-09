@@ -6,9 +6,6 @@ name: "cloudclinic-dev"
 
 namespace: default
 
-service:
-  port: 80
-
 ingress:
   enabled: true
   className: "nginx"
@@ -17,11 +14,13 @@ ingress:
     nginx.ingress.kubernetes.io/use-regex: "true"
 
   hosts:
-    - host: demo.cloudclinic.ng
+    - host: nginx.cloudclinic.ng
       paths:
         - path: /
           pathType: ImplementationSpecific
+      svcPort: 80
+      svcName: nginx
   tls:
    - secretName: tls-secret
      hosts:
-       - demo.cloudclinic.ng
+       - nginx.cloudclinic.ng
