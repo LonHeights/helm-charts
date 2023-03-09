@@ -63,6 +63,16 @@ entries:
     version: 0.1.1
   ingress:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2023-03-09T09:21:59.645570172Z"
+    description: A Helm chart for Kubernetes
+    digest: fbf855bc5c07a2530c7c5dfd5312d6e9f7d8108d73873071d352ce1772fe05d9
+    name: ingress
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/ingress-0.1.1/ingress-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-03-09T09:14:42.384223576Z"
     description: A Helm chart for Kubernetes
@@ -83,4 +93,4 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2023-03-09T09:14:42.384239076Z"
+generated: "2023-03-09T09:21:59.645590872Z"
