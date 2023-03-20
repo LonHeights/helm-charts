@@ -20,18 +20,17 @@ resources:
     cpu: "50m"
     memory: "50Mi"
   limits:
-    cpu: "100m"
     memory: "100Mi"
 
 # Environment
-environment: {}
-  # uncomment name below to set environment variables to `Staging` or `Development`. Production does not have a label
-  # Must be set to `Development` for development deployments and `Staging` for staging deployments.
-  # name: "Staging | Development"
+environment: "Sandbox"
+  # uncomment name below to set environment variables to `Sandbox`.
+  # Must be set to `{}` for production deployments and `Sandbox` for development and staging deployments.
+  # name: "Sandbox"
 
 # Tolerations
 tolerations:
-  enabled: false # set to `false` for production alone. Must be `true` for Staging and Development
+  enabled: true # set to `false` for production alone.
 
 # Service
 service:
