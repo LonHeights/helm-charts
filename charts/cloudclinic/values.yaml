@@ -26,7 +26,7 @@ resources:
 # Environment
 environment: {}
   # uncomment name below to set environment variables to `Sandbox`.
-  # Must be set to `{}` for production deployments and `Sandbox` for development and staging deployments.
+  # Must be set to `{}` for production deployments, `Development` for development and `Staging` for staging deployments. Only for chart version: >= 1.0.6
   # name: "Sandbox"
 
 # Tolerations
