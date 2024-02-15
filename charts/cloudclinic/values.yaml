@@ -21,9 +21,10 @@ resources:
     memory: "50Mi"
   limits:
     memory: "100Mi"
+    cpu: "1"
 
 # Environment
-environment: "Sandbox"
+environment: {}
   # uncomment name below to set environment variables to `Sandbox`.
   # Must be set to `{}` for production deployments and `Sandbox` for development and staging deployments.
   # name: "Sandbox"
@@ -38,7 +39,6 @@ service:
   protocol:
     name: TCP
     http: 80
-    https: 443
   annotations:
     enabled: false # Set as `true` for apis that uses internal loadbalancer with apim
     annotations: 'service.beta.kubernetes.io/azure-load-balancer-internal: "true"'
@@ -60,11 +60,27 @@ env:
 # This is used for scaling pods horizontally.
 
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 1
   maxReplicas: 2
-  targetCPUUtilizationPercentage: 80
-  targetMemoryUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 70
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  hosts:
+    - host: nginx.cloudclinic.ng
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
 
 # persistent volume
 pv:
