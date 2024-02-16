@@ -72,6 +72,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt
   hosts:
     - host: nginx.cloudclinic.ng
       paths:
