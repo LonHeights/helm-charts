@@ -61,10 +61,10 @@ spec:
       {{- end }}
       {{- if .Values.tolerations.enabled }}
       tolerations:
-        - key: {{ .Values.tolerations.key | quote }}
-          operator: {{ .Values.tolerations.operator | quote }} 
-          value: {{ .Values.tolerations.value | quote }} 
-          effect: {{ .Values.tolerations.effects | quote }}
+      - key: {{ .Values.tolerations.key | quote }}
+        operator: {{ .Values.tolerations.operator | quote }} 
+        value: {{ .Values.tolerations.value | quote }} 
+        effect: {{ .Values.tolerations.effects | quote }}
       {{- end }}
       imagePullSecrets:
         - name: regcred
