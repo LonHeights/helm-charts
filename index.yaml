@@ -3,6 +3,16 @@ entries:
   cloudclinic:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2024-05-09T18:20:36.2425327Z"
+    description: added cert manager annotation in values file
+    digest: af63662747cf5db2539db98351f212f49f20f17b1435a869c29602b3bd9fb9fb
+    name: cloudclinic
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/cloudclinic-2.0.0/cloudclinic-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2024-02-16T11:13:31.654901658Z"
     description: added cert manager annotation in values file
     digest: 84e251d86d9e6f2ab4a3cbfa6554abf141cebdd6f095bff30804d1e46ddca090
@@ -183,4 +193,4 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-16T11:13:31.654964465Z"
+generated: "2024-05-09T18:20:36.242605575Z"
