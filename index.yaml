@@ -165,6 +165,16 @@ entries:
   limestone:
   - apiVersion: v2
     appVersion: 1.0.2
+    created: "2024-05-09T22:28:39.342236749Z"
+    description: A Helm chart for Kubernetes
+    digest: 510c1d1240e657cfa4af01d5b7c798921f2b49ebf5ea682f715d7f1f901e405b
+    name: limestone
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.4/limestone-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.2
     created: "2024-05-09T21:37:16.091389274Z"
     description: A Helm chart for Kubernetes
     digest: ccbc819e2c15a06fe098ec2a2a45668f9a359f6af962f2fee69d30a09c07a5b1
@@ -203,4 +213,4 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-09T21:37:16.091454826Z"
+generated: "2024-05-09T22:28:39.342298183Z"
