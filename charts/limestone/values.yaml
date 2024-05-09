@@ -23,10 +23,10 @@ resources:
     memory: "100Mi"
 
 # Environment
-environment: "Sandbox"
+environment: #"Sandbox"
   # uncomment name below to set environment variables to `Sandbox`.
   # Must be set to `{}` for production deployments and `Sandbox` for development and staging deployments.
-  # name: "Sandbox"
+   name: "Sandbox"
 
 # Tolerations
 tolerations:
