@@ -32,7 +32,11 @@ environment: {}
 # Tolerations
 tolerations:
   enabled: true # set to `false` for production alone.
-
+  key: "app"
+  operator: "Equal"
+  value: "NonProd"
+  effects: "NoSchedule"
+  
 # Service
 service:
   type: NodePort # NodePort, LoadBalancer, ClusterIP
