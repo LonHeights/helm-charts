@@ -213,4 +213,15 @@ entries:
     urls:
     - https://github.com/LonHeights/helm-charts/releases/download/limestone-1.0.0/limestone-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-09T22:28:39.342298183Z"
+  oxypu:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-22T15:54:41.944720497Z"
+    description: A Helm chart for Kubernetes
+    digest: d2ac74ef1ea308e2dbb85b88df86c0eb4fea7a39754ec06bee45c51b4945f643
+    name: oxypu
+    type: application
+    urls:
+    - https://github.com/LonHeights/helm-charts/releases/download/oxypu-0.1.0/oxypu-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-22T15:54:41.944770912Z"
