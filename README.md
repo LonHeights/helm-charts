@@ -29,12 +29,21 @@ cloudclinic` to see the charts.
 ```bash
   helm install limestone loh/limestone
 ```
+### To install the oxypu chart:
+```bash
+  helm install oxypu loh/oxypu
+```
+
 ### To uninstall the chart:
 ```bash
   helm uninstall cloudclinic
 ```
 ```bash
   helm uninstall limestone
+```
+
+```bash
+  helm uninstall oxypu
 ```
 
 ### Local development
