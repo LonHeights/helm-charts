@@ -1,0 +1,26 @@
+# Default values for ingress.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: "cloudclinic-dev"
+
+namespace: default
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/use-regex: "true"
+
+  hosts:
+    - host: nginx.cloudclinic.ng
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+      svcPort: 80
+      svcName: nginx
+  tls:
+   - secretName: tls-secret
+     hosts:
+       - nginx.cloudclinic.ng

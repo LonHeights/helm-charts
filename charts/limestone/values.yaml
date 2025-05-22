@@ -1,4 +1,4 @@
-# Default values for cloudclinic-chart.
+# Default values for limestone-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -21,13 +21,12 @@ resources:
     memory: "50Mi"
   limits:
     memory: "100Mi"
-    cpu: "1"
 
 # Environment
-environment: {}
-  # uncomment name below to set environment.
-  # Must be set to `{}` for production deployments, `Development` for development and `Staging` for staging deployments. Only for chart version: >= 1.0.6
-  # name: "Sandbox"
+environment: #"Sandbox"
+  # uncomment name below to set environment variables to `Sandbox`.
+  # Must be set to `{}` for production deployments and `Sandbox` for development and staging deployments.
+   name: "Sandbox"
 
 # Tolerations
 tolerations:
@@ -36,13 +35,14 @@ tolerations:
   operator: "Equal"
   value: "NonProd"
   effects: "NoSchedule"
-  
+
 # Service
 service:
   type: NodePort # NodePort, LoadBalancer, ClusterIP
   protocol:
     name: TCP
     http: 80
+    https: 443
   annotations:
     enabled: false # Set as `true` for apis that uses internal loadbalancer with apim
     annotations: 'service.beta.kubernetes.io/azure-load-balancer-internal: "true"'
@@ -53,47 +53,32 @@ env:
     # set to `true` to create a secret with the environment variables. Secret name is same with the deployment name.
     # data should contain key value pairs in the format of "key":"value".
     create: false
-    data: {}
+    data: 
+      {}
   configmap:
     # set to `true` to create a configmap with the environment variables. Configmap name is same with the deployment name.
     # data should contain key value pairs in the format of "key":"value".
-    create: false
-    data: {}
+    create: false 
+    data: 
+      {}
 
 # autoscaling
 # This is used for scaling pods horizontally.
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 1
   maxReplicas: 2
-  targetCPUUtilizationPercentage: 70
-  targetMemoryUtilizationPercentage: 70
-
-ingress:
-  enabled: false
-  className: "nginx"
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    cert-manager.io/cluster-issuer: letsencrypt
-  hosts:
-    - host: nginx.cloudclinic.ng
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 # persistent volume
 pv:
   # uncomment below to set persistent volume
   create: false # true: create pv | false: do not create pvc
-  name: "cloudclinic-pv"
+  name: "limestone-pv"
   size: 8Gi
-  path: "/var/lib/cloudclinic"
+  path: "/var/lib/limestone"
   storageClass: "azurefile-csi"
 
 # volume
@@ -104,6 +89,6 @@ volume:
 # persistent volume claim
 pvc:
   create: false # true: create pvc | false: do not create pvc. Note that `volume.bind` must be true for this to be bond to a pod.
-  name: "cloudclinic-pvc"
+  name: "limestone-pvc"
   size: 8Gi
   storageClass: "azurefile-csi"
